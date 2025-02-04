@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+
+:root {
+  font-size: 16px;
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
