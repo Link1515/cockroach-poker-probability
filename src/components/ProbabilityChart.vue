@@ -62,17 +62,22 @@ const option = ref({
   title: {
     text: '出現機率',
     textStyle: {
-      color: '#fff',
+      color: 'oklch(0.872 0.01 258.338)',
       fontWeight: 'normal'
     },
     left: 'center'
   },
   tooltip: {
     trigger: 'item',
-    formatter: '{b}: {c}%'
+    formatter: '{b}: {c}%',
+    backgroundColor: 'oklch(0.21 0.034 264.665)',
+    textStyle: {
+      color: 'oklch(0.872 0.01 258.338)'
+    }
   },
   series: {
     type: 'pie',
+    radius: '80%',
     label: {
       show: false
     },
