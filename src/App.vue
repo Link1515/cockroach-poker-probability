@@ -1,6 +1,7 @@
 <script setup>
 import { ModalsContainer } from 'vue-final-modal';
 import CountBtn from '~/components/CountBtn.vue';
+import ProbabilityChart from '~/components/ProbabilityChart.vue';
 import { useCockroachPocker } from '~/composables/useCockroachPocker';
 
 const { species, tableCards, handCards, countIncrement, countDecrement } =
@@ -23,7 +24,11 @@ const { species, tableCards, handCards, countIncrement, countDecrement } =
       </div>
     </div>
 
-    <div></div>
+    <ProbabilityChart
+      :species="species"
+      :table-cards="tableCards"
+      :hand-cards="handCards"
+    />
 
     <div>
       <h2 class="text-center mb-4 text-2xl">手牌</h2>
