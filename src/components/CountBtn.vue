@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import { vOnLongPress } from '@vueuse/components';
 import ModifyCountModal from '~/components/ModifyCountModal.vue';
+import { capitalize } from '~/utils/capitalize';
 
 const props = defineProps({
   name: {
@@ -64,6 +65,9 @@ const longPressOptions = {
     <ModifyCountModal v-model="show">
       <div>
         <div>
+          <h3 class="text-center text-2xl font-bold">
+            {{ capitalize(props.name) }}
+          </h3>
           <img
             class="select-none"
             :src="props.image"
@@ -71,7 +75,7 @@ const longPressOptions = {
             draggable="false"
           />
         </div>
-        <div class="flex gap-2 justify-center items-center text-2xl text-white">
+        <div class="flex gap-2 justify-center items-center text-2xl">
           <button @click="decrement">
             <i class="bi bi-dash"></i>
           </button>
