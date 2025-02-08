@@ -9,6 +9,7 @@ import {
 } from 'echarts/components';
 import VChart from 'vue-echarts';
 import { ref, computed } from 'vue';
+import { capitalize } from '~/utils/capitalize';
 
 const props = defineProps({
   species: {
@@ -47,7 +48,7 @@ const totalCards = computed(() => {
 });
 
 props.species.forEach(s => {
-  const name = s.name.charAt(0).toUpperCase() + s.name.slice(1);
+  const name = capitalize(s.name);
   const value = computed(() => {
     let v =
       (TOTAL_PER_SPECIES - props.tableCards[s.name] - props.handCards[s.name]) /
