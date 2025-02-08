@@ -4,6 +4,19 @@
   font-size: 16px;
 }
 
+body {
+  @apply bg-gray-900 text-white;
+}
+
+button {
+  @apply cursor-pointer;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
 @utility container {
   margin-inline: auto;
   padding-inline: 1rem;
