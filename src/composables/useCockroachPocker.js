@@ -1,3 +1,4 @@
+import { color } from 'echarts';
 import { ref } from 'vue';
 import batIcon from '~/assets/bat.svg';
 import bugIcon from '~/assets/bug.svg';
@@ -10,16 +11,17 @@ import spiderIcon from '~/assets/spider.svg';
 
 export function useCockroachPocker() {
   const species = [
-    { name: 'bat', icon: batIcon },
-    { name: 'bug', icon: bugIcon },
-    { name: 'cockroach', icon: cockroachIcon },
-    { name: 'fly', icon: flyIcon },
-    { name: 'frog', icon: frogIcon },
-    { name: 'rat', icon: ratIcon },
-    { name: 'scorpion', icon: scorpionIcon },
+    { name: 'bat', icon: batIcon, color: '#8577bf' },
+    { name: 'bug', icon: bugIcon, color: '#c4d712' },
+    { name: 'cockroach', icon: cockroachIcon, color: '#fb7e36' },
+    { name: 'fly', icon: flyIcon, color: '#009893' },
+    { name: 'frog', icon: frogIcon, color: '#878d22' },
+    { name: 'rat', icon: ratIcon, color: '#cf9b7a' },
+    { name: 'scorpion', icon: scorpionIcon, color: '#a5b79c' },
     {
       name: 'spider',
-      icon: spiderIcon
+      icon: spiderIcon,
+      color: '#a9a79c'
     }
   ];
 
