@@ -29,23 +29,21 @@ const showModal = () => {
   show.value = true;
 };
 
-const longPressOptions = {
-  onMouseUp(duration, distance, isLongPress) {
-    if (!isLongPress) {
-      count.value++;
-    }
-  }
-};
-
 function increment() {
-  if (count.value >= 8) return;
-  count.value++;
+  count.value = props.increment(props.name, count.value);
 }
 
 function decrement() {
-  if (count.value <= 0) return;
-  count.value--;
+  count.value = props.decrement(count.value);
 }
+
+const longPressOptions = {
+  onMouseUp(duration, distance, isLongPress) {
+    if (!isLongPress) {
+      increment();
+    }
+  }
+};
 </script>
 
 <template>
