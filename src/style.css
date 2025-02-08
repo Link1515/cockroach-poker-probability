@@ -14,7 +14,7 @@ button {
 
 input:focus,
 button:focus {
-  outline: none;
+  @apply outline-0;
 }
 
 @utility container {

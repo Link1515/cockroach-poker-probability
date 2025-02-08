@@ -1,4 +1,3 @@
-import { color } from 'echarts';
 import { ref } from 'vue';
 import batIcon from '~/assets/bat.svg';
 import bugIcon from '~/assets/bug.svg';
