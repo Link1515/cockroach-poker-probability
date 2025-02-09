@@ -3,7 +3,7 @@ import batIcon from '~/assets/bat.svg';
 import bugIcon from '~/assets/bug.svg';
 import cockroachIcon from '~/assets/cockroach.svg';
 import flyIcon from '~/assets/fly.svg';
-import frogIcon from '~/assets/frog.svg';
+import toadIcon from '~/assets/toad.svg';
 import ratIcon from '~/assets/rat.svg';
 import scorpionIcon from '~/assets/scorpion.svg';
 import spiderIcon from '~/assets/spider.svg';
@@ -14,7 +14,7 @@ export function useCockroachPocker() {
     { name: 'bug', icon: bugIcon, color: '#c4d712' },
     { name: 'cockroach', icon: cockroachIcon, color: '#fb7e36' },
     { name: 'fly', icon: flyIcon, color: '#009893' },
-    { name: 'frog', icon: frogIcon, color: '#878d22' },
+    { name: 'toad', icon: toadIcon, color: '#878d22' },
     { name: 'rat', icon: ratIcon, color: '#cf9b7a' },
     { name: 'scorpion', icon: scorpionIcon, color: '#a5b79c' },
     {
@@ -29,7 +29,7 @@ export function useCockroachPocker() {
     bug: 0,
     cockroach: 0,
     fly: 0,
-    frog: 0,
+    toad: 0,
     rat: 0,
     scorpion: 0,
     spider: 0
@@ -40,7 +40,7 @@ export function useCockroachPocker() {
     bug: 0,
     cockroach: 0,
     fly: 0,
-    frog: 0,
+    toad: 0,
     rat: 0,
     scorpion: 0,
     spider: 0
