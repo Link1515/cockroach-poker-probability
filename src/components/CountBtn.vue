@@ -21,6 +21,10 @@ const props = defineProps({
     type: Function,
     required: true,
   },
+  shrink: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const show = ref(false);
@@ -55,7 +59,8 @@ const longPressOptions = {
     >
       <div class="absolute top-0 left-0 h-full w-full"></div>
       <img
-        class="aspect-square select-none"
+        class="aspect-square transition-transform duration-500 select-none"
+        :style="props.shrink ? 'transform: scale(0.6)' : ''"
         :src="props.image"
         :alt="props.name"
         width="250"

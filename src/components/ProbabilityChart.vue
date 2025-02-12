@@ -26,6 +26,8 @@ const props = defineProps({
   },
 });
 
+const emit = defineEmits(['focus', 'blur']);
+
 use([
   CanvasRenderer,
   PieChart,
@@ -92,8 +94,22 @@ const option = ref({
     },
   },
 });
+
+function handleMouseover(params) {
+  emit('focus', params.name.toLowerCase());
+}
+
+function handleMouseout() {
+  emit('blur');
+}
 </script>
 
 <template>
-  <v-chart style="height: 400px" :option="option" autoresize />
+  <v-chart
+    style="height: 400px"
+    :option="option"
+    autoresize
+    @mouseover="handleMouseover"
+    @mouseout="handleMouseout"
+  />
 </template>

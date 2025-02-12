@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue';
 import { ModalsContainer } from 'vue-final-modal';
 import CountBtn from '~/components/CountBtn.vue';
 import ProbabilityChart from '~/components/ProbabilityChart.vue';
@@ -6,6 +7,20 @@ import { useCockroachPocker } from '~/composables/useCockroachPocker';
 
 const { species, tableCards, handCards, countIncrement, countDecrement } =
   useCockroachPocker();
+
+const focusedSpecies = ref('');
+
+function focusSpecies(name) {
+  focusedSpecies.value = name;
+}
+
+function blurSpecies() {
+  focusedSpecies.value = '';
+}
+
+function iconShouldShrink(name) {
+  return focusedSpecies.value !== '' && focusedSpecies.value !== name;
+}
 </script>
 
 <template>
@@ -20,6 +35,7 @@ const { species, tableCards, handCards, countIncrement, countDecrement } =
           v-model:count="tableCards[s.name]"
           :increment="countIncrement"
           :decrement="countDecrement"
+          :shrink="iconShouldShrink(s.name)"
         />
       </div>
     </div>
@@ -28,6 +44,8 @@ const { species, tableCards, handCards, countIncrement, countDecrement } =
       :species="species"
       :table-cards="tableCards"
       :hand-cards="handCards"
+      @focus="focusSpecies"
+      @blur="blurSpecies"
     />
 
     <div class="rounded-3xl border-2 border-gray-400 p-4">
@@ -40,6 +58,7 @@ const { species, tableCards, handCards, countIncrement, countDecrement } =
           v-model:count="handCards[s.name]"
           :increment="countIncrement"
           :decrement="countDecrement"
+          :shrink="iconShouldShrink(s.name)"
         />
       </div>
     </div>
