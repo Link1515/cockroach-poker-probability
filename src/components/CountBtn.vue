@@ -31,6 +31,7 @@ const show = ref(false);
 const count = defineModel('count');
 
 const showModal = () => {
+  if ('vibrate' in navigator) navigator.vibrate(200);
   show.value = true;
 };
 
@@ -54,12 +55,11 @@ const longPressOptions = {
 <template>
   <div>
     <button
-      class="relative cursor-pointer"
+      class="cursor-pointer"
       v-on-long-press="[showModal, longPressOptions]"
     >
-      <div class="absolute top-0 left-0 h-full w-full"></div>
       <img
-        class="aspect-square transition-transform duration-500 select-none"
+        class="pointer-events-none aspect-square transition-transform duration-500 select-none"
         :style="props.shrink ? 'transform: scale(0.6)' : ''"
         :src="props.image"
         :alt="props.name"

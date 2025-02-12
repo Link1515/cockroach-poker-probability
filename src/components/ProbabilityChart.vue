@@ -96,7 +96,6 @@ const option = ref({
 });
 
 function handleMouseover(params) {
-  if ('vibrate' in navigator) navigator.vibrate(200);
   emit('focus', params.name.toLowerCase());
 }
 
