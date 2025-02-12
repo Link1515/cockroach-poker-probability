@@ -50,9 +50,10 @@ const longPressOptions = {
 <template>
   <div>
     <button
-      class="cursor-pointer"
+      class="relative cursor-pointer"
       v-on-long-press="[showModal, longPressOptions]"
     >
+      <div class="absolute top-0 left-0 h-full w-full"></div>
       <img
         class="aspect-square select-none"
         :src="props.image"
