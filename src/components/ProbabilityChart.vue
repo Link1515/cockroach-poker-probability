@@ -5,7 +5,7 @@ import { PieChart } from 'echarts/charts';
 import {
   TitleComponent,
   TooltipComponent,
-  LegendComponent
+  LegendComponent,
 } from 'echarts/components';
 import VChart from 'vue-echarts';
 import { ref, computed } from 'vue';
@@ -14,16 +14,16 @@ import { capitalize } from '~/utils/capitalize';
 const props = defineProps({
   species: {
     type: Array,
-    required: true
+    required: true,
   },
   tableCards: {
     type: Object,
-    required: true
+    required: true,
   },
   handCards: {
     type: Object,
-    required: true
-  }
+    required: true,
+  },
 });
 
 use([
@@ -31,23 +31,23 @@ use([
   PieChart,
   TitleComponent,
   TooltipComponent,
-  LegendComponent
+  LegendComponent,
 ]);
 
 const data = [];
 const TOTAL_PER_SPECIES = 8;
 const totalCards = computed(() => {
   let total = 64;
-  Object.values(props.tableCards).forEach(v => {
+  Object.values(props.tableCards).forEach((v) => {
     total -= v;
   });
-  Object.values(props.handCards).forEach(v => {
+  Object.values(props.handCards).forEach((v) => {
     total -= v;
   });
   return total;
 });
 
-props.species.forEach(s => {
+props.species.forEach((s) => {
   const name = capitalize(s.name);
   const value = computed(() => {
     let v =
@@ -64,33 +64,33 @@ const option = ref({
     text: '出現機率',
     textStyle: {
       color: 'oklch(0.872 0.01 258.338)',
-      fontWeight: 'normal'
+      fontWeight: 'normal',
     },
-    left: 'center'
+    left: 'center',
   },
   tooltip: {
     trigger: 'item',
     formatter: '{b}: {c}%',
     backgroundColor: 'oklch(0.21 0.034 264.665)',
     textStyle: {
-      color: 'oklch(0.872 0.01 258.338)'
-    }
+      color: 'oklch(0.872 0.01 258.338)',
+    },
   },
   series: {
     type: 'pie',
     radius: '80%',
     label: {
-      show: false
+      show: false,
     },
     data,
     emphasis: {
       itemStyle: {
         shadowBlur: 10,
         shadowOffsetX: 0,
-        shadowColor: 'rgba(0, 0, 0, 0.5)'
-      }
-    }
-  }
+        shadowColor: 'rgba(0, 0, 0, 0.5)',
+      },
+    },
+  },
 });
 </script>
 

@@ -10,9 +10,9 @@ const { species, tableCards, handCards, countIncrement, countDecrement } =
 
 <template>
   <div class="container my-4">
-    <div class="border-gray-400 border-2 p-4 rounded-3xl mb-6">
-      <h2 class="text-center mb-4 text-2xl">場上的牌</h2>
-      <div class="grid grid-cols-4 md:grid-cols-8 gap-4">
+    <div class="mb-6 rounded-3xl border-2 border-gray-400 p-4">
+      <h2 class="mb-4 text-center text-2xl">場上的牌</h2>
+      <div class="grid grid-cols-4 gap-4 md:grid-cols-8">
         <CountBtn
           v-for="s in species"
           :name="s.name"
@@ -30,9 +30,9 @@ const { species, tableCards, handCards, countIncrement, countDecrement } =
       :hand-cards="handCards"
     />
 
-    <div class="border-gray-400 border-2 p-4 rounded-3xl">
-      <h2 class="text-center mb-4 text-2xl">手牌</h2>
-      <div class="grid grid-cols-4 md:grid-cols-8 gap-4">
+    <div class="rounded-3xl border-2 border-gray-400 p-4">
+      <h2 class="mb-4 text-center text-2xl">手牌</h2>
+      <div class="grid grid-cols-4 gap-4 md:grid-cols-8">
         <CountBtn
           v-for="s in species"
           :name="s.name"

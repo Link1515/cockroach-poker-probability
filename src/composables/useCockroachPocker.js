@@ -20,8 +20,8 @@ export function useCockroachPocker() {
     {
       name: 'spider',
       icon: spiderIcon,
-      color: '#a9a79c'
-    }
+      color: '#a9a79c',
+    },
   ];
 
   const tableCards = ref({
@@ -32,7 +32,7 @@ export function useCockroachPocker() {
     toad: 0,
     rat: 0,
     scorpion: 0,
-    spider: 0
+    spider: 0,
   });
 
   const handCards = ref({
@@ -43,7 +43,7 @@ export function useCockroachPocker() {
     toad: 0,
     rat: 0,
     scorpion: 0,
-    spider: 0
+    spider: 0,
   });
 
   function countIncrement(name, count) {
@@ -61,6 +61,6 @@ export function useCockroachPocker() {
     tableCards,
     handCards,
     countIncrement,
-    countDecrement
+    countDecrement,
   };
 }

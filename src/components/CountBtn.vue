@@ -7,20 +7,20 @@ import { capitalize } from '~/utils/capitalize';
 const props = defineProps({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   image: {
     type: String,
-    required: true
+    required: true,
   },
   increment: {
     type: Function,
-    required: true
+    required: true,
   },
   decrement: {
     type: Function,
-    required: true
-  }
+    required: true,
+  },
 });
 
 const show = ref(false);
@@ -43,7 +43,7 @@ const longPressOptions = {
     if (!isLongPress) {
       increment();
     }
-  }
+  },
 };
 </script>
 
@@ -75,7 +75,7 @@ const longPressOptions = {
             draggable="false"
           />
         </div>
-        <div class="flex gap-2 justify-center items-center text-2xl">
+        <div class="flex items-center justify-center gap-2 text-2xl">
           <button @click="decrement">
             <i class="bi bi-dash"></i>
           </button>
