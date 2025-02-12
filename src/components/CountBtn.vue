@@ -59,7 +59,7 @@ const longPressOptions = {
       v-on-long-press="[showModal, longPressOptions]"
     >
       <img
-        class="pointer-events-none aspect-square transition-transform duration-500 select-none"
+        class="pointer-events-none aspect-square transition-transform duration-500"
         :style="props.shrink ? 'transform: scale(0.6)' : ''"
         :src="props.image"
         :alt="props.name"
@@ -77,7 +77,7 @@ const longPressOptions = {
             {{ capitalize(props.name) }}
           </h3>
           <img
-            class="aspect-square select-none"
+            class="aspect-square"
             :src="props.image"
             :alt="props.name"
             width="250"
