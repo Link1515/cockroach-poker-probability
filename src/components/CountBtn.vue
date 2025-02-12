@@ -54,9 +54,11 @@ const longPressOptions = {
       v-on-long-press="[showModal, longPressOptions]"
     >
       <img
-        class="select-none"
+        class="aspect-square select-none"
         :src="props.image"
         :alt="props.name"
+        width="250"
+        height="250"
         draggable="false"
       />
     </button>
@@ -69,9 +71,11 @@ const longPressOptions = {
             {{ capitalize(props.name) }}
           </h3>
           <img
-            class="select-none"
+            class="aspect-square select-none"
             :src="props.image"
             :alt="props.name"
+            width="250"
+            height="250"
             draggable="false"
           />
         </div>
